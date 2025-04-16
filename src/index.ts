@@ -13,6 +13,30 @@
 
 export default {
 	async fetch(request, env, ctx): Promise<Response> {
-		return new Response('Hello World!');
+		const url = new URL(request.url)
+		const referer = request.headers.get("referer") || ""
+		
+		console.log("path:",url.pathname);
+		console.log("referer:",referer);
+
+
+		if (url.pathname.startsWith('/osaka')) {
+			//url.hostname = 'patina-site-aleph-labs.vercel.app' // your origin
+			url.hostname = 'dev-patina-site-aleph-labs.vercel.app' // your origin
+			
+			return fetch(url)
+		  }
+		//   else if(referer.includes("/osaka"))
+		//   {
+		// 	url.hostname = 'chg-app.vercel.app' // your origin
+		// 	const modifiedRequest = new Request(url.toString(), request)
+		// 	return fetch(modifiedRequest)
+		//   }
+		  else{
+			return new Response('Hello World!');
+		  }
+		
+
+		
 	},
 } satisfies ExportedHandler<Env>;
