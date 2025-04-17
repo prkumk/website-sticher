@@ -20,9 +20,9 @@ export default {
 		console.log("referer:",referer);
 
 
-		if (url.pathname.startsWith('/osaka')) {
-			//url.hostname = 'patina-site-aleph-labs.vercel.app' // your origin
-			url.hostname = 'dev-patina-site-aleph-labs.vercel.app' // your origin
+		if (url.pathname.startsWith('/testosaka')) {
+			url.hostname = 'patina-site-aleph-labs.vercel.app' // your origin
+			//url.hostname = 'dev-patina-site-aleph-labs.vercel.app' // your origin
 			
 			return fetch(url)
 		  }
