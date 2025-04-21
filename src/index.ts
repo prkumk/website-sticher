@@ -21,7 +21,7 @@ export default {
 
 
 		if (url.pathname.startsWith('/testosaka')) {
-			url.hostname = 'patina-site-aleph-labs.vercel.app' // your origin
+			url.hostname = 'preview-patina-site-aleph-labs.vercel.app' // your origin
 			//url.hostname = 'dev-patina-site-aleph-labs.vercel.app' // your origin
 			
 			return fetch(url)
